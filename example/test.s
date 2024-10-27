@@ -493,3 +493,22 @@ band:
 	lw	fp, 8(sp)
 	addi	sp, sp, 16
 	ret
+	.globl	sll
+	.type	sll, @function
+sll:
+	addi	sp, sp, -16
+	sw	ra, 12(sp)
+	sw	fp, 8(sp)
+	addi	fp, sp, 16
+	sw	a0, -16(fp)
+	sw	a1, -12(fp)
+	lw	t1, -16(fp)
+	lw	t2, -12(fp)
+	sll	t3, t1, t2
+	mv	a0, t3
+	j	.Lsll_exit
+.Lsll_exit:
+	lw	ra, 12(sp)
+	lw	fp, 8(sp)
+	addi	sp, sp, 16
+	ret

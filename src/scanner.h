@@ -21,7 +21,8 @@ enum {
   TOK_NUMBER,
   TOK_IDENTIFIER,
   TOK_EOF,
-  TOK_BAND // 新加
+  TOK_BAND, // 新加-按位与
+  TOK_SLL   // 新加-逻辑左移
 };
 
 typedef struct {

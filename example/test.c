@@ -118,8 +118,14 @@ int gcd(int x, int y)
   return d;
 }
 
-// 新加按为与支持
+// 新加-按位与支持
 int band(int x, int y)
 {
   return x & y;
+}
+
+// 新加-逻辑左移
+int sll(int x, int y)
+{
+  return x << y;
 }

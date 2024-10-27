@@ -261,7 +261,9 @@ void dump_operator(Operator op)
   case OP_REM:
     printf("OP_REM"); break;
   case OP_BAND:
-    printf("OP_BAND");break;
+    printf("OP_BAND"); break;
+  case OP_SLL:
+    printf("OP_SLL"); break;
   }
 }
 

@@ -162,6 +162,11 @@ Token next_token_impl()
       next_char();
       token.id = TOK_LE;
     }
+    if (look_ahead(0) == '<')
+    {
+      next_char();
+      token.id = TOK_SLL;
+    }
     break;
   /* FIXME: 实现如下词法分析代码片段, 开始 */
   /* op_ge -> >=  */
@@ -253,6 +258,8 @@ void dump_token(Token tok)
     printf("PUNCTUATOR: &&"); break;
   case TOK_OR:
     printf("PUNCTUATOR: ||"); break;
+  case TOK_SLL:
+    printf("PUNCTUATOR: <<"); break;
   case TOK_ELSE:
     printf("KEYWORD: ELSE"); break;
   case TOK_FOR:

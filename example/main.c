@@ -19,8 +19,10 @@ int while_sum(int x);
 int for_sum(int x);
 int increase_two(int x);
 int gcd(int x, int y);
-// 新加按位与支持
+// 新加-按位与支持
 int band(int x, int y);
+// 新加-逻辑左移
+int sll(int x, int y);
 
 int main(void)
 {
@@ -72,9 +74,13 @@ int main(void)
   res = gcd(x, y);
   printf("gcd(%d, %d) = %d\n", x, y, res);
 
-  // 新加按位与支持
+  // 新加-按位与支持
   res = band(x, y);
   printf("%d & %d = %d\n", x, y, res); // 010 & 101 = 0
+
+  // 新加-逻辑左移
+  res = sll(x, y);
+  printf("%d << %d = %d\n", x, y, res); // 2 << 5 = 64
 
   return 0;
 }

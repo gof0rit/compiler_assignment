@@ -47,7 +47,8 @@ typedef enum {
   OP_MUL,
   OP_DIV,
   OP_REM,
-  OP_BAND,         // 新加：按位与
+  OP_BAND,         // 新加-按位与
+  OP_SLL           // 新加-逻辑左移
 } Operator;
 
 typedef struct TransUnit {

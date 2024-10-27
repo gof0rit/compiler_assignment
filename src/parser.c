@@ -17,9 +17,10 @@ typedef enum
   Prec_Assignment,     // =
   Prec_LogicalOr,      // ||
   Prec_LogicalAnd,     // &&
-  Prec_BitAnd,         // & 新加
+  Prec_BitAnd,         // & 新加-按位与
   Prec_Equality,       // ==, !=
   Prec_Relational,     // >=, <=, >, <
+  Prec_Shift,          // << 新加-逻辑左移
   Prec_Additive,       // -, +
   Prec_Multiplicative, // *, /
 } PrecLevel;
@@ -343,6 +344,8 @@ PrecLevel get_binop_predence_level(int token_id)
   case TOK_LE:
   case TOK_GE:
     return Prec_Relational;
+  case TOK_SLL:
+    return Prec_Shift;
   case '+':
   case '-':
     return Prec_Additive;
@@ -375,8 +378,10 @@ Operator get_binop(int token_id)
     return OP_GT;
   case TOK_LE:
     return OP_LE;
-  case TOK_GE:
+  case TOK_GE: 
     return OP_GE;
+  case TOK_SLL: 
+    return OP_SLL;
   case '+':
     return OP_ADD;
   case '-':

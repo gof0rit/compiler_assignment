@@ -591,7 +591,8 @@ ExprResult visit_binary_op(Node *node)
   case OP_MUL: return gen_binary_op(OPC_MUL, rs1, rs2);
   case OP_DIV: return gen_binary_op(OPC_DIV, rs1, rs2);
   case OP_REM: return gen_binary_op(OPC_REM, rs1, rs2);
-  case OP_BAND: return gen_binary_op(OPC_AND, rs1, rs2);
+  case OP_BAND: return gen_binary_op(OPC_AND, rs1, rs2); // 新加-按位与
+  case OP_SLL: return gen_binary_op(OPC_SLL, rs1, rs2); // 新加-逻辑左移
   }
 }
 
